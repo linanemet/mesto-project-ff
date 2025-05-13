@@ -23,7 +23,7 @@ export function createCard(
 
   cardLikeButton.addEventListener("click", likeCard);
 
-  cardImage.addEventListener("click", showImgPopup);
+  cardImage.addEventListener("click", () => showImgPopup(cardData));
 
   return cardElement;
 }
@@ -36,7 +36,3 @@ export function deleteCard(currentCard) {
 export function likeCard(evt) {
   evt.target.classList.toggle("card__like-button_is-active");
 }
-// открыть картинку карточки
-//export function showImgPopup(evt) {
-  //  evt.target.classList.toggle("card__like-button_is-active");
-//}

@@ -85,7 +85,7 @@ function handleAddFormSubmit(evt) {
     name: cardInput.value,
     link: linkInput.value,
   };
-  const newCardElement = createCard(newCard, deleteCard);
+  const newCardElement = createCard(newCard, deleteCard, likeCard, showImgPopup);
   cardList.prepend(newCardElement);
   closeModal(addCardPopup);
   addForm.reset();
@@ -107,10 +107,10 @@ closePhotoButton.addEventListener("click", () => {
 
 // показ увеличенных картинок
 function showImgPopup(evt) {
-  openModal(imgPopup);
-  zoomedPopupImage.setAttribute("src", evt.target.src);
-  zoomedPopupImage.setAttribute("alt", evt.target.alt);
+  zoomedPopupImage.src = evt.target.src;
+  zoomedPopupImage.alt = evt.target.alt;
   imgPopupCaption.textContent = evt.target.alt;
+  openModal(imgPopup);
 }
 
 // плавное открытие картинок
