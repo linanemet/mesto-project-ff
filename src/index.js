@@ -106,10 +106,10 @@ closePhotoButton.addEventListener("click", () => {
 });
 
 // показ увеличенных картинок
-function showImgPopup(evt) {
-  zoomedPopupImage.src = evt.target.src;
-  zoomedPopupImage.alt = evt.target.alt;
-  imgPopupCaption.textContent = evt.target.alt;
+function showImgPopup(data) {
+  zoomedPopupImage.src = data.link;
+  zoomedPopupImage.alt = data.name;
+  imgPopupCaption.textContent = data.name;
   openModal(imgPopup);
 }
 
